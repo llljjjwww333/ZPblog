@@ -1,7 +1,7 @@
 # ZPblog: A Multi-Agent Framework for Intelligent Content Curation
 
 **ZPblog** is a research-oriented, full-stack content ecosystem designed to explore the integration of Large Language Model (LLM) agents within modern web architectures. Unlike traditional CMS solutions that act as passive data repositories, ZPblog implements an active "Editorial Board" environment, utilizing multi-agent collaboration and hybrid recommendation algorithms to solve the challenges of automated quality control and "cold-start" distribution for new creators.
-
+![HomePage](docs/images/home.png)
 ***
 
 ## Technical Stack
