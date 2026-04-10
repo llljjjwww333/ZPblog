@@ -6,6 +6,8 @@ pydantic-settings<=2.0.0
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
+python-dotenv
+psycopg-binary
 mysql-connector-python
 aiofiles
 gunicorn

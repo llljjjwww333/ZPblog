@@ -1,0 +1,18 @@
+# Ignore local environment and development artifacts
+.env
+*.env
+.env.*
+node_modules/
+frontend/node_modules/
+backend/src/venv/
+frontend/dist/
+build/
+.git/
+.gitignore
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite3
+*.log
+.vscode/
+.idea/
