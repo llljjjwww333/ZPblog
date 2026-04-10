@@ -1,41 +1,39 @@
 services:
-  - type: web_service
+  - type: web
     name: zpblog-backend
-    env: docker
-    branch: main
+    runtime: docker
+    branch: master
     plan: starter
     dockerfilePath: Dockerfile
     envVars:
       - key: DATABASE_URL
-        fromDatabase: true
+        fromDatabase:
+          name: zpblog-db
+          property: connectionString
       - key: SECRET_KEY
-        value: your-secret-key
+        generateValue: true
       - key: ALLOWED_ORIGINS
-        value: https://<your-frontend-service>.onrender.com,https://<your-backend-service>.onrender.com
+        sync: false
       - key: AI_PROVIDER
         value: openai
       - key: AI_API_KEY
-        value: your-api-key
+        sync: false
       - key: AI_API_BASE
         value: ""
       - key: AI_MODEL
         value: gpt-3.5-turbo
-
-static_sites:
-  - type: static_site
+  - type: web
     name: zpblog-frontend
-    env: node
-    branch: main
+    runtime: static
+    branch: master
     rootDir: frontend
     buildCommand: npm install && npm run build
-    publishPath: dist
-    plan: starter
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_BASE_URL
-        value: https://<your-backend-service>.onrender.com/api
+        sync: false
 
 databases:
   - name: zpblog-db
-    engine: postgres
-    version: "15"
-    plan: starter
+    plan: free
+    postgresMajorVersion: "15"
